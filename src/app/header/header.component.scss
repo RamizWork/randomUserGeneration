@@ -1,0 +1,120 @@
+.navbar{
+  position: relative;
+  width: 100%;
+  background-color: #222;
+}
+
+.navbar__wrapper {
+  display: flex;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  height: 60px;
+}
+
+.navbar__menu {
+  margin: 0;
+  padding: 0;
+}
+
+.navbar__link_li {
+  list-style: none;
+  display: inline-block;
+  margin: 5px 20px 0 0;
+}
+
+.link1:before {
+  content: "";
+  margin: auto;
+  width: 27px;
+  height: 23px;
+  display: block;
+  background-size: 27px;
+  background-image: url("./../../assets/icon/nav_icons.png");
+}
+
+.link2:before {
+  display: block;
+  margin: auto;
+  content: '';
+  width: 27px;
+  height: 23px;
+  background-image: url("./../../assets/icon/nav_icons.png");
+  background-size: 27px;
+  background-position: 0 250px;
+}
+
+.link3:before {
+  display: block;
+  margin: auto;
+  content: '';
+  width: 27px;
+  height: 23px;
+  background-image: url("./../../assets/icon/nav_icons.png");
+  background-size: 27px;
+  background-position: 0 426px;
+}
+
+.link4:before {
+  display: block;
+  margin: auto;
+  content: '';
+  width: 27px;
+  height: 23px;
+  background-image: url("./../../assets/icon/nav_icons.png");
+  background-size: 27px;
+  background-position: 0 175px;
+}
+
+.link5:before {
+  display: block;
+  margin: auto;
+  content: '';
+  width: 27px;
+  height: 23px;
+  background-image: url("./../../assets/icon/nav_icons.png");
+  background-size: 27px;
+  background-position: 0 150px;
+}
+
+.link6:before {
+  display: block;
+  margin: auto;
+  content: '';
+  width: 27px;
+  height: 23px;
+  background-image: url("./../../assets/icon/nav_icons.png");
+  background-size: 27px;
+  background-position: 0 125px;
+}
+
+.link7:before {
+  display: block;
+  margin: auto;
+  content: '';
+  width: 27px;
+  height: 23px;
+  background-image: url("./../../assets/icon/nav_icons.png");
+  background-size: 27px;
+  background-position: 0 325px;
+}
+
+.link8:before {
+  display: block;
+  margin: auto;
+  content: '';
+  width: 27px;
+  height: 23px;
+  background-image: url("./../../assets/icon/nav_icons.png");
+  background-size: 27px;
+  background-position: 0 75px;
+}
+
+.navbar__link {
+  display: flex;
+  flex-direction: column;
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 500;
+}
