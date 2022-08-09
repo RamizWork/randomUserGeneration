@@ -9,8 +9,8 @@
     <a class="twitter" href="#"><img class="twitter_img" src="./../../assets/icon/twitter.png" alt="">Follow us
       @randomapi</a>
   </div>
-  <div class="section__card">
-    <div class="card">
+  <div class="section__card" switcher>
+    <div class="card" *ngIf="getUserData$ | async as userData">
       <div class="details">
         <div class="decor__block"></div>
         <div class="section__photo">
@@ -18,18 +18,18 @@
           <img class="card__photo" src="" alt="">
         </div>
         <div class="section__user-info">
-          <div class="description">Lorem ipsum dolor sit amet.</div>
+          <div class="description">{{userData.info}}</div>
           <div class="info">Lorem ipsum dolor sit amet.</div>
         </div>
       </div>
       <div class="icon">
-        <ul class="icon__list">
-          <li class="icon__list_li list1"></li>
-          <li class="icon__list_li list2"></li>
-          <li class="icon__list_li list3"></li>
-          <li class="icon__list_li list4"></li>
-          <li class="icon__list_li list5"></li>
-          <li class="icon__list_li list6"></li>
+        <ul class="icon__list" #ulTag>
+          <li class="icon__list_li user active" switcher [typeName]="'user'" [ulTag]="ulTag"></li>
+          <li class="icon__list_li mail" switcher [typeName]="'mail'" [ulTag]="ulTag"></li>
+          <li class="icon__list_li birthday" switcher [typeName]="'birthday'" [ulTag]="ulTag"></li>
+          <li class="icon__list_li address" switcher [typeName]="'address'" [ulTag]="ulTag"></li>
+          <li class="icon__list_li phone" switcher [typeName]="'phone'" [ulTag]="ulTag"></li>
+          <li class="icon__list_li password" switcher [typeName]="'password'" [ulTag]="ulTag"></li>
         </ul>
       </div>
     </div>
