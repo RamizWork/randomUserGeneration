@@ -10,28 +10,55 @@
       @randomapi</a>
   </div>
   <div class="section__card" switcher>
-    <div class="card" *ngIf="getUserData$ | async as userData">
+    <div class="card" *ngIf="userData$ | async as userData">
       <div class="details">
         <div class="decor__block"></div>
         <div class="section__photo">
           <a href="#">New</a>
-          <img class="card__photo" src="" alt="">
+          <img class="card__photo" [src]="userData.results[0].picture.large" alt="">
         </div>
         <div class="section__user-info">
-          <div class="description">{{userData.info}}</div>
-          <div class="info">Lorem ipsum dolor sit amet.</div>
+          <ul class="description">
+            <li class="description__li user active">
+              <div>Hi, My name is</div>
+              <div class="info">{{userData.results[0].name.first + ' ' + userData.results[0].name.last}}</div>
+            </li>
+            <li class="description__li mail">
+              <div>My email address is</div>
+              <div class="info">{{userData.results[0].email}}</div>
+            </li>
+            <li class="description__li birthday">
+              <div>My birthday is</div>
+              <div class="info">{{userData.results[0].dob.date | date:'dd/M/yy'}}</div>
+            </li>
+            <li class="description__li address">
+              <div>My address is</div>
+              <div class="info">{{userData.results[0].location.street.number + ' ' + userData.results[0].location.street.name}}</div>
+            </li>
+            <li class="description__li phone">
+              <div>My phone number is</div>
+              <div class="info">{{userData.results[0].phone}}</div>
+            </li>
+            <li class="description__li password">
+              <div>My password is</div>
+              <div class="info">{{userData.results[0].login.password}}</div>
+            </li>
+          </ul>
         </div>
       </div>
       <div class="icon">
         <ul class="icon__list" #ulTag>
-          <li class="icon__list_li user active" switcher [typeName]="'user'" [ulTag]="ulTag"></li>
-          <li class="icon__list_li mail" switcher [typeName]="'mail'" [ulTag]="ulTag"></li>
-          <li class="icon__list_li birthday" switcher [typeName]="'birthday'" [ulTag]="ulTag"></li>
-          <li class="icon__list_li address" switcher [typeName]="'address'" [ulTag]="ulTag"></li>
-          <li class="icon__list_li phone" switcher [typeName]="'phone'" [ulTag]="ulTag"></li>
-          <li class="icon__list_li password" switcher [typeName]="'password'" [ulTag]="ulTag"></li>
+          <li class="icon__list_li user active" switcher [iconListName]="'user'" [ulTag]="ulTag"></li>
+          <li class="icon__list_li mail" switcher [iconListName]="'mail'" [ulTag]="ulTag"></li>
+          <li class="icon__list_li birthday" switcher [iconListName]="'birthday'" [ulTag]="ulTag"></li>
+          <li class="icon__list_li address" switcher [iconListName]="'address'" [ulTag]="ulTag"></li>
+          <li class="icon__list_li phone" switcher [iconListName]="'phone'" [ulTag]="ulTag"></li>
+          <li class="icon__list_li password" switcher [iconListName]="'password'" [ulTag]="ulTag"></li>
         </ul>
       </div>
     </div>
   </div>
+  <button class="next__user" (click)="newRandomUser()">Nex user</button>
 </div>
+<ng-container *ngIf="sub$ | async"></ng-container>
+<ng-container *ngIf="getUserData$ | async"></ng-container>
